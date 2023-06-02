@@ -9,14 +9,22 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
+
 require("lazy").setup({
   "AlanLang/oceanic-next",
   "xiyaowong/nvim-transparent",
-  "nvim-lua/plenary.nvim",
-  "nvim-telescope/telescope.nvim",
-  "kyazdani42/nvim-web-devicons",
-  "kyazdani42/nvim-tree.lua",
-  "kyazdani42/nvim-web-devicons",
-  "nvim-lualine/lualine.nvim"
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {"nvim-lua/plenary.nvim"}
+  },
+  {
+    "kyazdani42/nvim-tree.lua",
+    dependencies = {"kyazdani42/nvim-web-devicons"}
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {"kyazdani42/nvim-web-devicons"}
+  }
 })
