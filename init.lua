@@ -13,3 +13,5 @@ require("plugin-config.telescope")
 require("plugin-config.nvim-tree")
 -- 状态栏美化
 require("plugin-config.lualine")
+-- 命令栏
+require("plugin-config.command")

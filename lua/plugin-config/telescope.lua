@@ -36,4 +36,4 @@ lualine.setup{
   }
 
 
--- lualine.load_extension("command_center")
+lualine.load_extension("command_center")

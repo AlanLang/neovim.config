@@ -26,5 +26,9 @@ require("lazy").setup({
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {"kyazdani42/nvim-web-devicons"}
+  },
+  {
+    "FeiyouG/command_center.nvim",
+    dependencies = {"nvim-telescope/telescope.nvim"}
   }
 })
