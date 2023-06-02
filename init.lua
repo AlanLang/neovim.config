@@ -6,3 +6,6 @@ require("plugins")
 require("keybindings")
 -- 主题设置
 require("colorscheme")
+
+
+require("plugin-config.telescope")

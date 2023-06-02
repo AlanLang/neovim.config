@@ -12,5 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   "AlanLang/oceanic-next",
-  "xiyaowong/nvim-transparent"
+  "xiyaowong/nvim-transparent",
+  "nvim-lua/plenary.nvim",
+  "nvim-telescope/telescope.nvim"
 })
