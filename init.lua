@@ -7,6 +7,9 @@ require("keybindings")
 -- 主题设置
 require("colorscheme")
 
-
+-- 文件查找
 require("plugin-config.telescope")
+-- 文件树
 require("plugin-config.nvim-tree")
+-- 状态栏美化
+require("plugin-config.lualine")
