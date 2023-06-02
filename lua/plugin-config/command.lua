@@ -10,7 +10,7 @@ local silent_noremap = {noremap = true, silent = true}
 
 command_center.add({
     {
-      desc = "open file",
+      desc = "find files",
       cmd = ":Telescope find_files<CR>",
       keys = { "n", "<C-p>", noremap },
     },
