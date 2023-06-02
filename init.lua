@@ -9,3 +9,4 @@ require("colorscheme")
 
 
 require("plugin-config.telescope")
+require("plugin-config.nvim-tree")
