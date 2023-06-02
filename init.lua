@@ -2,3 +2,5 @@
 require('basic')
 -- 快捷键映射
 require("keybindings")
+-- 插件管理
+require("plugins")
