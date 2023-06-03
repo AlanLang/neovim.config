@@ -25,9 +25,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- 主题
-   "AlanLang/oceanic-next",
+  "AlanLang/oceanic-next",
   -- 设置透明
-   "xiyaowong/nvim-transparent",
+  "xiyaowong/nvim-transparent",
+  {
+    'kaiuri/nvim-juliana',
+    lazy = false,
+    opts = { --[=[ configuration --]=] },
+    config = true,
+  },
   -- 输入法自动切换
   "ybian/smartim",
   -- 弹出式窗口
@@ -39,14 +45,14 @@ require("lazy").setup({
   },
   -- 文件树
   {
-   "kyazdani42/nvim-tree.lua",
+    "kyazdani42/nvim-tree.lua",
     dependencies = {"kyazdani42/nvim-web-devicons"},
     cmd = "NvimTreeToggle",
     config = nvim_tree_config
   },
   -- 状态栏
   {
-   "nvim-lualine/lualine.nvim",
+    "nvim-lualine/lualine.nvim",
     dependencies = {"kyazdani42/nvim-web-devicons"},
     config = lualine_config
   },
@@ -103,7 +109,7 @@ require("lazy").setup({
     'numToStr/Comment.nvim',
     event = "VeryLazy",
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   }, {
     "nvim-treesitter/nvim-treesitter",
@@ -114,5 +120,11 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     config = cmp_config,
     dependencies = {"hrsh7th/vim-vsnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path"},
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end
   }
 })

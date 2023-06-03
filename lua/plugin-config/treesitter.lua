@@ -6,7 +6,7 @@ return function()
     -- 启用代码高亮模块
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = true,
+      additional_vim_regex_highlighting = false,
     },
     autotag = {
       enable = true,

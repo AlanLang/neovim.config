@@ -8,7 +8,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 
-map("n", "<leader>s", ":w<CR>", opt)
 map("n", "<leader>a", "<C-o>", opt)
 map("n", "<leader>z", "<C-i>", opt)
 -- windows 分屏快捷键
