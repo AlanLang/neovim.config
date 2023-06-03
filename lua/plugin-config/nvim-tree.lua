@@ -1,12 +1,6 @@
-local status, nvim_tree = pcall(require, "nvim-tree")
-if not status then
-    vim.notify("没有找到 nvim-tree")
-  return
-end
-
 -- 列表操作快捷键
 local list_keys = require('keybindings').nvimTreeLis
-nvim_tree.setup({
+local config = {
     -- 不显示 git 状态图标
     git = {
         enable = false,
@@ -53,8 +47,12 @@ nvim_tree.setup({
     system_open = {
         cmd = 'open', -- mac 直接设置为v open
     },
-})
+}
 -- 自动关闭
 vim.cmd([[
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]])
+
+return function()
+  require("nvim-tree").setup(config)
+end

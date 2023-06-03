@@ -8,6 +8,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 
+map("n", "<leader>s", ":w<CR>", opt)
 map("n", "<leader>a", "<C-o>", opt)
 map("n", "<leader>z", "<C-i>", opt)
 -- windows 分屏快捷键
@@ -51,9 +52,7 @@ map("n", "<leader>g", ":Telescope find_files<CR>", opt)
 -- 打开命令栏
 map("n", "<leader>p", ":Telescope command_center<CR>", opt)
 -- 打开当前符号搜索
-map("n", "<leader>s", ":Telescope lsp_document_symbols<CR>", opt)
--- 最近打开的文件
-map("n", "<leader>q", ":Telescope oldfiles<CR>", opt)
+-- map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
 
 return pluginKeys
 

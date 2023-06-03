@@ -1,4 +1,7 @@
 local smooth_cursor_config = require('plugin-config.smooth-cursor')
+local nvim_tree_config = require('plugin-config.nvim-tree')
+local lualine_config = require('plugin-config.lualine')
+local mason_config = require('plugin-config.mason')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -22,12 +25,15 @@ require("lazy").setup({
     dependencies = {"nvim-lua/plenary.nvim"}
   },
   {
-    "kyazdani42/nvim-tree.lua",
-    dependencies = {"kyazdani42/nvim-web-devicons"}
+   "kyazdani42/nvim-tree.lua",
+    dependencies = {"kyazdani42/nvim-web-devicons"},
+    cmd = "NvimTreeToggle",
+    config = nvim_tree_config 
   },
   {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {"kyazdani42/nvim-web-devicons"}
+   "nvim-lualine/lualine.nvim",
+    dependencies = {"kyazdani42/nvim-web-devicons"},
+    config = lualine_config 
   },
   {
     "FeiyouG/command_center.nvim",
@@ -37,9 +43,7 @@ require("lazy").setup({
     "williamboman/mason.nvim",
     event = "VeryLazy",
     build = ":MasonUpdate",
-    config = function()
-       require("mason").setup()
-    end
+    config = mason_config
   },
   {
     "karb94/neoscroll.nvim",
@@ -51,9 +55,6 @@ require("lazy").setup({
   {
     "gen740/SmoothCursor.nvim",
     event = "VeryLazy",
-    config = function()
-      require('smoothcursor').setup(smooth_cursor_config)
-    end
-
+    config = smooth_cursor_config 
   }
 })

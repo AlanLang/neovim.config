@@ -29,4 +29,6 @@ local smooth_cursor_config = {
   disabled_filetypes = nil,  -- this option will be skipped if enabled_filetypes is set. example: { "TelescopePrompt", "NvimTree" }
 }
 
-return smooth_cursor_config
+return function()
+  require('smoothcursor').setup(smooth_cursor_config)
+end
