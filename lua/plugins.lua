@@ -4,6 +4,10 @@ local lualine_config = require('plugin-config.lualine')
 local mason_config = require('plugin-config.mason')
 local telescope_config = require('plugin-config.telescope')
 local command_center_config = require('plugin-config.command')
+local treesitter_config = require('plugin-config.treesitter')
+local mason_lsp_config = require('plugin-config.mason-lspconfig')
+local nvim_lsp_config = require('lsp.lspconfig')
+local cmp_config = require('plugin-config.cmp')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -21,9 +25,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- 主题
-  "AlanLang/oceanic-next",
+   "AlanLang/oceanic-next",
   -- 设置透明
-  "xiyaowong/nvim-transparent",
+   "xiyaowong/nvim-transparent",
   -- 输入法自动切换
   "ybian/smartim",
   -- 弹出式窗口
@@ -38,13 +42,13 @@ require("lazy").setup({
    "kyazdani42/nvim-tree.lua",
     dependencies = {"kyazdani42/nvim-web-devicons"},
     cmd = "NvimTreeToggle",
-    config = nvim_tree_config 
+    config = nvim_tree_config
   },
   -- 状态栏
   {
    "nvim-lualine/lualine.nvim",
     dependencies = {"kyazdani42/nvim-web-devicons"},
-    config = lualine_config 
+    config = lualine_config
   },
   -- 命令中心
   {
@@ -56,14 +60,20 @@ require("lazy").setup({
   -- LSP 管理
   {
     "williamboman/mason.nvim",
-    event = "VeryLazy",
     build = ":MasonUpdate",
     config = mason_config
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = mason_lsp_config
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = nvim_lsp_config
   },
   -- 平滑滚动
   {
     "karb94/neoscroll.nvim",
-    event = "VeryLazy",
     config = function()
       require("neoscroll").setup()
     end
@@ -71,27 +81,22 @@ require("lazy").setup({
   -- 光标平滑移动
   {
     "gen740/SmoothCursor.nvim",
-    event = "VeryLazy",
-    config = smooth_cursor_config 
+    config = smooth_cursor_config
   },
   -- 目标快速操作
   {
     "wellle/targets.vim",
-    event = "VeryLazy"
   },
   -- 同缩进快速操作
   {
     "michaeljsmith/vim-indent-object",
-    event = "VeryLazy"
   },
   -- git 信息
   {
     "f-person/git-blame.nvim",
-    event = "VeryLazy"
   },
   {
     "github/copilot.vim",
-    event = "VeryLazy",
   },
   -- 注释
   {
@@ -100,5 +105,14 @@ require("lazy").setup({
     config = function()
         require('Comment').setup()
     end
+  }, {
+    "nvim-treesitter/nvim-treesitter",
+    config = treesitter_config,
+  },
+  -- 代码补全
+  {
+    "hrsh7th/nvim-cmp",
+    config = cmp_config,
+    dependencies = {"hrsh7th/vim-vsnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path"},
   }
 })
