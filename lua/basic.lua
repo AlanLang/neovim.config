@@ -83,4 +83,4 @@ vim.o.spell = false
 vim.o.spelloptions = "camel"
 vim.o.spellcapcheck = "" 
 vim.o.clipboard = "unnamed"
-
+vim.g.smartim_default = "com.apple.keylayout.ABC"
