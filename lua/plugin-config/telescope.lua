@@ -1,15 +1,9 @@
--- 如果找不到 telescope 组件，就不继续执行
-local status, lualine = pcall(require, "telescope")
-if not status then
-    vim.notify("没有找到 telescope")
-  return
-end
-
 -- 列表操作快捷键
 local list_keys = require('keybindings').mapTelescope
 
--- https://github.com/nvim-telescope/telescope.nvim#getting-started
-lualine.setup{
+return function()
+  local telescope = require("telescope")
+  telescope.setup{
     defaults = {
       -- Default configuration for telescope goes here:
       -- config_key = value,
@@ -35,5 +29,5 @@ lualine.setup{
     }
   }
 
-
-lualine.load_extension("command_center")
+  telescope.load_extension("command_center")
+end

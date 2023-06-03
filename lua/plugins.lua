@@ -2,6 +2,8 @@ local smooth_cursor_config = require('plugin-config.smooth-cursor')
 local nvim_tree_config = require('plugin-config.nvim-tree')
 local lualine_config = require('plugin-config.lualine')
 local mason_config = require('plugin-config.mason')
+local telescope_config = require('plugin-config.telescope')
+local command_center_config = require('plugin-config.command')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -22,6 +24,8 @@ require("lazy").setup({
   "xiyaowong/nvim-transparent",
   {
     "nvim-telescope/telescope.nvim",
+    config = telescope_config,
+    cmd = "Telescope",
     dependencies = {"nvim-lua/plenary.nvim"}
   },
   {
@@ -37,7 +41,9 @@ require("lazy").setup({
   },
   {
     "FeiyouG/command_center.nvim",
-    dependencies = {"nvim-telescope/telescope.nvim"}
+    dependencies = {"nvim-telescope/telescope.nvim"},
+    config = command_center_config,
+    cmd = "Telescope",
   },
   {
     "williamboman/mason.nvim",
@@ -56,5 +62,28 @@ require("lazy").setup({
     "gen740/SmoothCursor.nvim",
     event = "VeryLazy",
     config = smooth_cursor_config 
+  },
+  {
+    "wellle/targets.vim",
+    event = "VeryLazy"
+  },
+  {
+    "michaeljsmith/vim-indent-object",
+    event = "VeryLazy"
+  },
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy"
+  },
+  {
+    "github/copilot.vim",
+    event = "VeryLazy",
+  },
+  {
+    'numToStr/Comment.nvim',
+    event = "VeryLazy",
+    config = function()
+        require('Comment').setup()
+    end
   }
 })

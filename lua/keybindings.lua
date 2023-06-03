@@ -23,6 +23,14 @@ map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
+-- Telescope
+-- 查找文件
+map("n", "<leader>g", ":Telescope find_files<CR>", opt)
+-- 打开命令栏
+map("n", "<leader>p", ":Telescope command_center<CR>", opt)
+-- 打开当前符号搜索
+-- map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
+
 -- nvim-tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
@@ -45,14 +53,6 @@ pluginKeys.nvimTreeList = {
   { key = "p", action = "paste" },
   { key = "s", action = "system_open" },
 }
-
--- Telescope
--- 查找文件
-map("n", "<leader>g", ":Telescope find_files<CR>", opt)
--- 打开命令栏
-map("n", "<leader>p", ":Telescope command_center<CR>", opt)
--- 打开当前符号搜索
--- map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
 
 return pluginKeys
 
