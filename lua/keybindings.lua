@@ -7,9 +7,9 @@ local opt = {noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 map("n", "<leader>a", "<C-o>", opt)
 map("n", "<leader>z", "<C-i>", opt)
+map("n", "<leader>s", ":w<CR>", opt)
 -- windows 分屏快捷键
 map("n", "<leader>d", ":vsp<CR>", opt)
 map("n", "<leader>x", ":sp<CR>", opt)
@@ -29,7 +29,7 @@ map("n", "<leader>f", "<Plug>(easymotion-s)", opt)
 map("n", "<leader>g", ":Telescope find_files<CR>", opt)
 -- 打开命令栏
 map("n", "<leader>p", ":Telescope command_center<CR>", opt)
-map("n", "<leader>s", ":Telescope lsp_document_symbols<CR>", opt)
+map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
 -- 打开当前符号搜索
 -- map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
 

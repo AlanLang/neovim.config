@@ -1,5 +1,23 @@
+
+
 return function()
   local cmp = require("cmp")
+  local format = {
+    format = require("lspkind").cmp_format({
+      mode = 'symbol',
+      --mode = 'symbol', -- show only symbol annotations
+
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function (entry, vim_item)
+        -- Source 显示提示来源
+        vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
+        return vim_item
+      end
+    })
+  }
+
   cmp.setup({
     -- 指定 snippet 引擎
     snippet = {
@@ -27,6 +45,8 @@ return function()
 
     -- 快捷键设置
     mapping = require("keybindings").cmp(cmp),
+    -- 使用lspkind-nvim显示类型图标
+    formatting = format
   })
 
   -- / 查找模式使用 buffer 源

@@ -8,6 +8,7 @@ local treesitter_config = require('plugin-config.treesitter')
 local mason_lsp_config = require('plugin-config.mason-lspconfig')
 local nvim_lsp_config = require('lsp.lspconfig')
 local cmp_config = require('plugin-config.cmp')
+local lspkind = require('plugin-config.lspkind')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -114,7 +115,7 @@ require("lazy").setup({
   {
     "hrsh7th/nvim-cmp",
     config = cmp_config,
-    dependencies = {"hrsh7th/vim-vsnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path"},
+    dependencies = { "hrsh7th/vim-vsnip", "hrsh7th/cmp-vsnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline", "rafamadriz/friendly-snippets"},
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -128,5 +129,6 @@ require("lazy").setup({
   },{
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
-  }
+  },
+  lspkind
 })
