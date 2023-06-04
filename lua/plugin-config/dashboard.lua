@@ -21,13 +21,13 @@ return {
 			config = {
 				header = header,
 				shortcut = {
-					{ icon = " ", desc = "Projects", group = 'Number', action = "Telescope projects", key = "j" },
+					{ icon = " ", desc = "Projects", group = 'Number', action = "Telescope projects", key = "q" },
 					{
 						icon = " ",
             desc = "Keybindings",
 						group = 'Number',
 						action = "edit ~/.config/nvim/lua/keybindings.lua",
-						key = "k",
+						key = "w",
 					},
 					{
             icon = " ",
