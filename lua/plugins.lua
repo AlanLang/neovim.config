@@ -29,10 +29,8 @@ require("lazy").setup({
   -- 设置透明
   "xiyaowong/nvim-transparent",
   {
-    'kaiuri/nvim-juliana',
-    lazy = false,
-    opts = { --[=[ configuration --]=] },
-    config = true,
+    "nvim-treesitter/nvim-treesitter",
+    config = treesitter_config,
   },
   -- 输入法自动切换
   "ybian/smartim",
@@ -101,9 +99,9 @@ require("lazy").setup({
   {
     "f-person/git-blame.nvim",
   },
-  {
-    "github/copilot.vim",
-  },
+  -- {
+  --   "github/copilot.vim",
+  -- },
   -- 注释
   {
     'numToStr/Comment.nvim',
@@ -111,10 +109,7 @@ require("lazy").setup({
     config = function()
       require('Comment').setup()
     end
-  }, {
-    "nvim-treesitter/nvim-treesitter",
-    config = treesitter_config,
-  },
+  }, 
   -- 代码补全
   {
     "hrsh7th/nvim-cmp",
@@ -126,5 +121,12 @@ require("lazy").setup({
     config = function()
       require("colorizer").setup()
     end
+  },{
+    "easymotion/vim-easymotion",
+  },{
+    "mg979/vim-visual-multi",
+  },{
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
   }
 })

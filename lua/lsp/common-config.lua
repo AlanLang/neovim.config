@@ -10,6 +10,7 @@ end
 
 -- 禁用格式化功能，交给专门插件插件处理
 M.disableFormat = function(client)
+  client.server_capabilities.semanticTokensProvider = nil
   if vim.fn.has("nvim-0.8") == 1 then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false

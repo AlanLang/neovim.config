@@ -6,7 +6,7 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 -- 使用相对行号
 vim.wo.number = true
-vim.wo.relativenumber = false
+vim.wo.relativenumber = true
 -- 高亮所在行
 vim.wo.cursorline = false
 -- 显示左侧图标指示列
@@ -81,6 +81,6 @@ vim.o.showmode = false
 -- 禁用内置的拼写检查
 vim.o.spell = false
 vim.o.spelloptions = "camel"
-vim.o.spellcapcheck = "" 
+vim.o.spellcapcheck = ""
 vim.o.clipboard = "unnamed"
 vim.g.smartim_default = "com.apple.keylayout.ABC"

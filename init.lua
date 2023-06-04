@@ -6,4 +6,3 @@ require("plugins")
 require("keybindings")
 -- 主题设置
 require("colorscheme")
-

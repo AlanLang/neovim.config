@@ -1,4 +1,4 @@
--- 插件快捷键
+-- 插件快捷键keyl
 local pluginKeys = {}
 local map = vim.api.nvim_set_keymap
 
@@ -22,6 +22,8 @@ map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
+map("n", "<leader>f", "<Plug>(easymotion-s)", opt)
+
 -- Telescope
 -- 查找文件
 map("n", "<leader>g", ":Telescope find_files<CR>", opt)
@@ -35,7 +37,7 @@ map("n", "<leader>s", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
-  -- 打开文件或文件夹
+  -- 打开文件或文件
   { key = {"<CR>", "o", "<2-LeftMouse>"}, action = "edit" },
   -- 分屏打开文件
   { key = "v", action = "vsplit" },
@@ -69,7 +71,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
   mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
   mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+  -- mapbuf("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
   -- 没用到
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
@@ -101,9 +103,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-		vim.keymap.set("n", "<leader>f", function()
-			vim.lsp.buf.format({ async = true })
-		end, opts)
+		--vim.keymap.set("n", "<leader>f", function()
+		--	vim.lsp.buf.format({ async = true })
+		--end, opts)
 	end,
 })
 
@@ -119,9 +121,9 @@ pluginKeys.cmp = function(cmp)
           c = cmp.mapping.close()
       }),
       -- 上一个
-      ["<C-k>"] = cmp.mapping.select_prev_item(),
+      ["<up>"] = cmp.mapping.select_prev_item(),
       -- 下一个
-      ["<C-j>"] = cmp.mapping.select_next_item(),
+      ["<down>"] = cmp.mapping.select_next_item(),
       -- 确认
       ["<CR>"] = cmp.mapping.confirm({
           select = true,
