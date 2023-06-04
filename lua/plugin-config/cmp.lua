@@ -1,6 +1,4 @@
-
-
-return function()
+local cmp_config =  function()
   local cmp = require("cmp")
   local format = {
     format = require("lspkind").cmp_format({
@@ -10,7 +8,7 @@ return function()
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      before = function (entry, vim_item)
+      before = function(entry, vim_item)
         -- Source 显示提示来源
         vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
         return vim_item
@@ -37,10 +35,10 @@ return function()
     },
     -- 补全源
     sources = cmp.config.sources({
-      { name = "nvim_lsp" },
-      -- For vsnip users.
-      { name = "vsnip" },
-    },
+        { name = "nvim_lsp" },
+        -- For vsnip users.
+        { name = "vsnip" },
+      },
       { { name = "buffer" }, { name = "path" } }),
 
     -- 快捷键设置
@@ -63,7 +61,21 @@ return function()
     sources = cmp.config.sources({
       { name = "path" },
     }, {
-        { name = "cmdline" },
-      }),
+      { name = "cmdline" },
+    }),
   })
 end
+
+return {
+  "hrsh7th/nvim-cmp",
+  config = cmp_config,
+  dependencies = {
+    "hrsh7th/vim-vsnip",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "rafamadriz/friendly-snippets",
+  },
+}

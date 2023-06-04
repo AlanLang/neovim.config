@@ -1,4 +1,4 @@
-return function()
+local nvim_lsp_config =  function()
   require("lsp.ui")
   local lspconfig = require("lspconfig")
   local servers = {
@@ -15,3 +15,8 @@ return function()
     end
   end
 end
+
+return   {
+  "neovim/nvim-lspconfig",
+  config = nvim_lsp_config,
+}
