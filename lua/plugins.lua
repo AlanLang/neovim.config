@@ -9,6 +9,7 @@ local mason_lsp_config = require('plugin-config.mason-lspconfig')
 local nvim_lsp_config = require('lsp.lspconfig')
 local cmp_config = require('plugin-config.cmp')
 local lspkind = require('plugin-config.lspkind')
+local null_ls = require('plugin-config.null')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -130,5 +131,6 @@ require("lazy").setup({
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   },
-  lspkind
+  lspkind,
+  null_ls
 })
