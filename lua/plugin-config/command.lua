@@ -1,7 +1,7 @@
 local noremap = { noremap = true }
 local silent_noremap = { noremap = true, silent = true }
 
-return function()
+local command_center_config = function()
   local command_center = require("command_center")
   command_center.add({
     {
@@ -14,3 +14,10 @@ return function()
   }
   })
 end
+
+return {
+  "FeiyouG/command_center.nvim",
+  dependencies = { "nvim-telescope/telescope.nvim" },
+  config = command_center_config,
+  cmd = "Telescope command_center",
+}

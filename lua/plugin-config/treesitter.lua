@@ -1,4 +1,4 @@
-return function()
+local treesitter_config = function()
   require("nvim-treesitter.configs").setup({
     -- 安装 language parser
     -- :TSInstallInfo 命令查看支持的语言
@@ -19,9 +19,14 @@ return function()
         node_decremental = "<BS>",
         scope_incremental = "<TAB>",
       },
-    },  -- 启用代码缩进模块 (=)
+    }, -- 启用代码缩进模块 (=)
     indent = {
       enable = true,
     },
   })
 end
+
+return {
+  "nvim-treesitter/nvim-treesitter",
+  config = treesitter_config,
+}

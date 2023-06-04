@@ -1,9 +1,9 @@
 -- 列表操作快捷键
 local list_keys = require('keybindings').mapTelescope
 
-return function()
+local telescope_config = function()
   local telescope = require("telescope")
-  telescope.setup{
+  telescope.setup {
     defaults = {
       -- Default configuration for telescope goes here:
       -- config_key = value,
@@ -31,3 +31,10 @@ return function()
 
   telescope.load_extension("command_center")
 end
+
+return {
+  "nvim-telescope/telescope.nvim",
+  config = telescope_config,
+  cmd = "Telescope",
+  dependencies = { "nvim-lua/plenary.nvim" }
+}

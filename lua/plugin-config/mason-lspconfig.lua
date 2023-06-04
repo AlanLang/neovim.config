@@ -1,4 +1,4 @@
-return function()
+local mason_lsp_config = function()
   require("mason-lspconfig").setup({
     -- 确保安装，根据需要填写
     ensure_installed = {
@@ -14,7 +14,12 @@ return function()
       "rust_analyzer",
       "taplo",
       "yamlls",
-      "lua_ls"
+      "lua_ls",
     },
   })
 end
+
+return {
+  "williamboman/mason-lspconfig.nvim",
+  config = mason_lsp_config,
+}

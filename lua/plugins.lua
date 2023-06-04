@@ -1,15 +1,17 @@
-local smooth_cursor_config = require('plugin-config.smooth-cursor')
-local nvim_tree_config = require('plugin-config.nvim-tree')
-local lualine_config = require('plugin-config.lualine')
-local mason_config = require('plugin-config.mason')
-local telescope_config = require('plugin-config.telescope')
-local command_center_config = require('plugin-config.command')
-local treesitter_config = require('plugin-config.treesitter')
-local mason_lsp_config = require('plugin-config.mason-lspconfig')
-local nvim_lsp_config = require('lsp.lspconfig')
-local cmp_config = require('plugin-config.cmp')
-local lspkind = require('plugin-config.lspkind')
-local null_ls = require('plugin-config.null')
+local smooth_cursor_config = require("plugin-config.smooth-cursor")
+local nvim_tree = require("plugin-config.nvim-tree")
+local lualine = require("plugin-config.lualine")
+local mason = require("plugin-config.mason")
+local telescope = require("plugin-config.telescope")
+local command_center = require("plugin-config.command")
+local treesitter = require("plugin-config.treesitter")
+local mason_lspconfig = require("plugin-config.mason-lspconfig")
+local nvim_lsp_config = require("lsp.lspconfig")
+local cmp_config = require("plugin-config.cmp")
+local lspkind = require("plugin-config.lspkind")
+local null_ls = require("plugin-config.null")
+local dashboard = require("plugin-config.dashboard")
+local project = require("plugin-config.project")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -30,64 +32,39 @@ require("lazy").setup({
   "AlanLang/oceanic-next",
   -- 设置透明
   "xiyaowong/nvim-transparent",
-  {
-    "nvim-treesitter/nvim-treesitter",
-    config = treesitter_config,
-  },
+  treesitter,
   -- 输入法自动切换
   "ybian/smartim",
   -- 弹出式窗口
-  {
-    "nvim-telescope/telescope.nvim",
-    config = telescope_config,
-    cmd = "Telescope",
-    dependencies = {"nvim-lua/plenary.nvim"}
-  },
+  telescope,
   -- 文件树
-  {
-    "kyazdani42/nvim-tree.lua",
-    dependencies = {"kyazdani42/nvim-web-devicons"},
-    cmd = "NvimTreeToggle",
-    config = nvim_tree_config
-  },
+  nvim_tree,
   -- 状态栏
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {"kyazdani42/nvim-web-devicons"},
-    config = lualine_config
-  },
+  lualine,
   -- 命令中心
-  {
-    "FeiyouG/command_center.nvim",
-    dependencies = {"nvim-telescope/telescope.nvim"},
-    config = command_center_config,
-    cmd = "Telescope command_center",
-  },
+  command_center,
+  -- 启动页面
+  dashboard,
+  -- 项目列表
+  project,
   -- LSP 管理
-  {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
-    config = mason_config
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = mason_lsp_config
-  },
+  mason,
+  mason_lspconfig,
   {
     "neovim/nvim-lspconfig",
-    config = nvim_lsp_config
+    config = nvim_lsp_config,
   },
   -- 平滑滚动
   {
     "karb94/neoscroll.nvim",
     config = function()
       require("neoscroll").setup()
-    end
+    end,
   },
   -- 光标平滑移动
   {
     "gen740/SmoothCursor.nvim",
-    config = smooth_cursor_config
+    config = smooth_cursor_config,
   },
   -- 目标快速操作
   {
@@ -106,31 +83,38 @@ require("lazy").setup({
   -- },
   -- 注释
   {
-    'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
     event = "VeryLazy",
     config = function()
-      require('Comment').setup()
-    end
-  }, 
+      require("Comment").setup()
+    end,
+  },
   -- 代码补全
   {
     "hrsh7th/nvim-cmp",
     config = cmp_config,
-    dependencies = { "hrsh7th/vim-vsnip", "hrsh7th/cmp-vsnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline", "rafamadriz/friendly-snippets"},
+    dependencies = {
+      "hrsh7th/vim-vsnip",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "rafamadriz/friendly-snippets",
+    },
   },
   {
-    "NvChad/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end
-  },{
     "easymotion/vim-easymotion",
-  },{
+  },
+  {
     "mg979/vim-visual-multi",
-  },{
+  },
+  {
     "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
   },
   lspkind,
-  null_ls
+  null_ls,
 })
