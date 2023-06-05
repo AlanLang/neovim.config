@@ -26,17 +26,16 @@ npm install -g cspell
 brew install lazygit
 ```
 
-## 安装 Packer.nvim 插件管理器
-```
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
 ## 主题
 https://github.com/mhartington/oceanic-next
 
 ## 设置透明
 https://github.com/xiyaowong/nvim-transparent
+```
+:TransparentEnable
+:TransparentDisable
+:TransparentToggle
+```
 
 ## 文件搜索
 
