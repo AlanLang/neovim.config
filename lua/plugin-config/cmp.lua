@@ -1,4 +1,4 @@
-local cmp_config =  function()
+local cmp_config = function()
   local cmp = require("cmp")
   local format = {
     format = require("lspkind").cmp_format({
@@ -68,6 +68,8 @@ end
 
 return {
   "hrsh7th/nvim-cmp",
+  lazy = true,
+  event = { "InsertEnter" },
   config = cmp_config,
   dependencies = {
     "hrsh7th/vim-vsnip",
