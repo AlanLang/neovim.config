@@ -15,6 +15,7 @@ local project = require("plugin-config.project")
 local neoscroll = require("plugin-config.neoscroll")
 local comment = require("plugin-config.comment")
 local autopairs = require("plugin-config.autopairs")
+local lazygit = require("plugin-config.lazygit")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -64,9 +65,7 @@ require("lazy").setup({
   "michaeljsmith/vim-indent-object",
   -- git 信息
   "f-person/git-blame.nvim",
-  -- {
-  --   "github/copilot.vim",
-  -- },
+  "github/copilot.vim",
   -- 注释
   comment,
   -- 代码补全
@@ -78,5 +77,6 @@ require("lazy").setup({
   autopairs,
   lspkind,
   null_ls,
-  "wakatime/vim-wakatime"
+  "wakatime/vim-wakatime",
+  lazygit,
 })
