@@ -43,3 +43,31 @@ https://github.com/xiyaowong/nvim-transparent
 * BurntSushi/ripgrep：https://github.com/BurntSushi/ripgrep
 * sharkdp/fd：https://github.com/sharkdp/fd
 
+## 常用快捷键
+### 对象操作
+以选中模式`v`举例，范围以`a`举例
+
+#### nvim-treesitter-textobjects
+
+| 快捷键 | 说明             |
+| ------ | ---------------- |
+| `vaf`  | 选中当前函数     |
+| `vac`  | 选中当前类的内容 |
+| `vas`  | 选中当前`scope`  |
+| `vad`  | 选中当前条件     |
+| `vaa`  | 选中当前参数     |
+
+### 跳转
+
+- `]m`：跳到下一个函数的开始处
+- `]]`：跳到下一个类的开始处
+- `]s`：跳到下一个scope的开始处
+- `]z`：跳到下一个fold的开始处
+- `]M`：跳到下一个函数的结尾处
+- `][`：跳到下一个类的结尾处
+- `[m`：跳到上一个函数的开始处
+- `[[`：跳到上一个类的开始处
+- `[M`：跳到上一个函数的结尾处
+- `[]`：跳到上一个类的结尾处
+- `]d`：跳到下一个条件
+- `[d`：跳到上一个条件
