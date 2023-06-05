@@ -1,7 +1,5 @@
 return {
   "romgrk/nvim-treesitter-context",
-  lazy = true,
-  event = { "User FileOpened" },
   config = function()
     require("treesitter-context").setup({
       enable = true,
