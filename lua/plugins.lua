@@ -17,6 +17,7 @@ local comment = require("plugin-config.comment")
 local autopairs = require("plugin-config.autopairs")
 local lazygit = require("plugin-config.lazygit")
 local copilot = require("plugin-config.copilot")
+local trouble = require("plugin-config.trouble")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -79,5 +80,6 @@ require("lazy").setup({
   null_ls,
   "wakatime/vim-wakatime",
   lazygit,
-  copilot
+  copilot,
+  trouble,
 })

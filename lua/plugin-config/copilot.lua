@@ -10,6 +10,9 @@ return {
       },
       suggestion = {
         auto_trigger = true,
+        keymap = {
+          accept = "<Right>",
+        }
       }
     })
     require("copilot_cmp").setup({
