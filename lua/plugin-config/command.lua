@@ -36,6 +36,10 @@ local command_center_config = function()
     {
       desc = "trouble toggle",
       cmd = ":TroubleToggle<CR>"
+    },
+    {
+      desc = "marks list all",
+      cmd = "<cmd>MarksListAll<CR>"
     }
   })
 end

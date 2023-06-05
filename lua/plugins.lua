@@ -20,6 +20,10 @@ local copilot = require("plugin-config.copilot")
 local trouble = require("plugin-config.trouble")
 local toggleterm = require("plugin-config.toggleterm")
 local leap = require("plugin-config.leap")
+local flit = require("plugin-config.flit")
+local treesitter_context = require("plugin-config.treesitter-context")
+local better_escape = require("plugin-config.better-escape")
+local marks = require("plugin-config.marks")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -93,4 +97,9 @@ require("lazy").setup({
   toggleterm,
   -- 快速在可视页面跳转
   leap,
+  -- 快速在当前行进行查找
+  flit,
+  treesitter_context,
+  better_escape,
+  marks,
 })
