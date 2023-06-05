@@ -34,6 +34,13 @@ map("n", "<leader>c", ":Telescope command_center<CR>", opt)
 map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 map("n", "<leader>i", ":LazyGit<CR>", opt)
+
+-- 打开控制台
+map("n", "<leader>z", ":ToggleTerm<CR>", opt)
+-- 关闭控制台
+-- map("t", "<esc>", [[<C-\><C-n><C-w>c]], opt)
+map("t", "<esc>", [[<C-\><C-n><C-w>c]], opt)
+
 -- 打开当前符号搜索
 -- map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
 
