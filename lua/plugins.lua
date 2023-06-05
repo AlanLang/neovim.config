@@ -25,6 +25,7 @@ local treesitter_context = require("plugin-config.treesitter-context")
 local better_escape = require("plugin-config.better-escape")
 local marks = require("plugin-config.marks")
 local surround = require("plugin-config.surround")
+local gomove = require("plugin-config.gomove")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -42,7 +43,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- 主题
-  "AlanLang/oceanic-next",
+  "alanlang/oceanic-next",
   -- 设置透明
   "xiyaowong/nvim-transparent",
   treesitter,
@@ -60,7 +61,7 @@ require("lazy").setup({
   dashboard,
   -- 项目列表
   project,
-  -- LSP 管理
+  -- lsp 管理
   mason,
   mason_lspconfig,
   lspconfig,
@@ -103,5 +104,6 @@ require("lazy").setup({
   treesitter_context,
   better_escape,
   marks,
-  surround
+  surround,
+  gomove,
 })
