@@ -24,6 +24,7 @@ local flit = require("plugin-config.flit")
 local treesitter_context = require("plugin-config.treesitter-context")
 local better_escape = require("plugin-config.better-escape")
 local marks = require("plugin-config.marks")
+local surround = require("plugin-config.surround")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -102,4 +103,5 @@ require("lazy").setup({
   treesitter_context,
   better_escape,
   marks,
+  surround
 })
