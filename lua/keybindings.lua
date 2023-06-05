@@ -12,7 +12,7 @@ map("n", "<leader>a", "<C-o>", opt)
 map("n", "<leader>z", "<C-i>", opt)
 map("n", "<leader>s", ":w<CR>", opt)
 -- windows 分屏快捷键
-map("n", "<leader>v", ":vsp<CR>", opt)
+map("n", "<leader>d", ":vsp<CR>", opt)
 map("n", "<leader>x", ":sp<CR>", opt)
 
 -- 关闭当前
@@ -31,7 +31,7 @@ map("n", "<leader>f", "<Plug>(easymotion-s)", opt)
 map("n", "<leader>g", ":Telescope find_files<CR>", opt)
 -- 打开命令栏
 map("n", "<leader>c", ":Telescope command_center<CR>", opt)
-map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
+map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 map("n", "<leader>i", ":LazyGit<CR>", opt)
 
