@@ -19,6 +19,7 @@ local lazygit = require("plugin-config.lazygit")
 local copilot = require("plugin-config.copilot")
 local trouble = require("plugin-config.trouble")
 local toggleterm = require("plugin-config.toggleterm")
+local leap = require("plugin-config.leap")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -72,16 +73,24 @@ require("lazy").setup({
   comment,
   -- 代码补全
   cmp,
-  -- 快速选择
-  "easymotion/vim-easymotion",
   -- 多光标选择
   "mg979/vim-visual-multi",
+  -- 自动补全
   autopairs,
+  -- 代码提示
   lspkind,
+  -- 代码格式化
   null_ls,
+  -- 代码时间统计
   "wakatime/vim-wakatime",
+  -- git 管理
   lazygit,
+  -- 代码片段
   copilot,
+  -- 代码错误提示
   trouble,
+  -- 弹出式终端
   toggleterm,
+  -- 快速在可视页面跳转
+  leap,
 })
