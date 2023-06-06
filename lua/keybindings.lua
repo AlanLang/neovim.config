@@ -24,11 +24,10 @@ map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
-map("n", "<leader>f", "<Plug>(easymotion-s)", opt)
 
 -- Telescope
 -- 查找文件
-map("n", "<leader>g", ":Telescope find_files<CR>", opt)
+map("n", "<leader>g", ":Telescope find_files hidden=true<CR>", opt)
 -- 打开命令栏
 map("n", "<leader>c", ":Telescope command_center<CR>", opt)
 map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
