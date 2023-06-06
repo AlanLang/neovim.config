@@ -40,6 +40,22 @@ local command_center_config = function()
     {
       desc = "marks list all",
       cmd = "<cmd>MarksListAll<CR>"
+    },
+    {
+      desc = "Run Jest on current file",
+      cmd = ':lua require"jester".run_file()<CR>'
+    },
+    {
+      desc = "Run Jest on current test",
+      cmd = ':lua require"jester".run()<CR>'
+    },
+    {
+      desc = "Debug Jest on current test",
+      cmd = ':lua require"jester".debug()<CR>'
+    },
+    {
+      desc = "Run last Jest test",
+      cmd = ':lua require"jester".run_last()<CR>'
     }
   })
 end
