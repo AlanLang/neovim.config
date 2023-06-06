@@ -39,7 +39,7 @@ map("n", "<leader>i", ":LazyGit<CR>", opt)
 map("n", "<leader>t", ":ToggleTerm<CR>", opt)
 -- 关闭控制台
 -- map("t", "<esc>", [[<C-\><C-n><C-w>c]], opt)
-map("t", "<esc>", [[<C-\><C-n><C-w>c]], opt)
+map("t", "<tab>", [[<C-\><C-n><C-w>c]], opt)
 
 -- 打开当前符号搜索
 -- map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
