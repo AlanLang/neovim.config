@@ -36,7 +36,7 @@ map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 map("n", "<leader>i", ":LazyGit<CR>", opt)
 
 -- 打开控制台
-map("n", "<leader>z", ":ToggleTerm<CR>", opt)
+map("n", "<leader>t", ":ToggleTerm<CR>", opt)
 -- 关闭控制台
 -- map("t", "<esc>", [[<C-\><C-n><C-w>c]], opt)
 map("t", "<esc>", [[<C-\><C-n><C-w>c]], opt)
