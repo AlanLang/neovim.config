@@ -56,6 +56,10 @@ local command_center_config = function()
     {
       desc = "Run last Jest test",
       cmd = ':lua require"jester".run_last()<CR>'
+    },
+    {
+      desc = "exit vim",
+      cmd = ":qa<CR>"
     }
   })
 end

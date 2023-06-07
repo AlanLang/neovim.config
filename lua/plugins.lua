@@ -31,6 +31,7 @@ local textobjects = require("plugin-config.textobjects")
 local jester = require("plugin-config.jester")
 local spectre = require("plugin-config.spectre")
 local hop = require("plugin-config.hop")
+local persistence = require("plugin-config.persistence")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -126,4 +127,6 @@ require("lazy").setup({
   spectre,
   -- 快速跳转
   hop,
+  -- 会话管理
+  persistence,
 })

@@ -38,6 +38,7 @@ map("n", "<leader>i", ":LazyGit<CR>", opt)
 
 map("n", "<leader>f", "viw<cmd>lua require('spectre').open_file_search()<CR>", opt)
 map("n", "<leader>F", "<cmd>lua require('spectre').open()<cr>", opt)
+map("n", "<leader>y", "<cmd>lua require('persistence').load()<cr>", opt)
 
 -- 打开控制台
 map("n", "<leader>t", ":ToggleTerm<CR>", opt)
