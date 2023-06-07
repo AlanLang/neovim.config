@@ -28,9 +28,9 @@ local surround = require("plugin-config.surround")
 local gomove = require("plugin-config.gomove")
 local search_replace = require("plugin-config.search-replace")
 local textobjects = require("plugin-config.textobjects")
-local nvim_spectre = require("plugin-config.nvim-spectre")
 local jester = require("plugin-config.jester")
 local spectre = require("plugin-config.spectre")
+local hop = require("plugin-config.hop")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -120,10 +120,10 @@ require("lazy").setup({
   search_replace,
   -- 快速操作对象
   textobjects,
-  -- 查找替换
-  nvim_spectre,
   -- 方便运行测试
   jester,
   -- 全局查找替换
   spectre,
+  -- 快速跳转
+  hop,
 })
