@@ -60,6 +60,14 @@ local command_center_config = function()
     {
       desc = "exit vim",
       cmd = ":qa<CR>"
+    },
+    {
+      desc = "Search replace string buffer open",
+      cmd = ":SearchReplaceSingleBufferOpen<CR>"
+    },
+    {
+      desc = "Search replace multiple buffer open",
+      cmd = ":SearchReplaceMultiBufferOpen<CR>"
     }
   })
 end
