@@ -24,7 +24,7 @@ local flit = require("plugin-config.flit")
 local treesitter_context = require("plugin-config.treesitter-context")
 local better_escape = require("plugin-config.better-escape")
 local marks = require("plugin-config.marks")
-local surround = require("plugin-config.surround")
+-- local surround = require("plugin-config.surround")
 local gomove = require("plugin-config.gomove")
 local search_replace = require("plugin-config.search-replace")
 local textobjects = require("plugin-config.textobjects")
@@ -32,6 +32,7 @@ local jester = require("plugin-config.jester")
 local spectre = require("plugin-config.spectre")
 local hop = require("plugin-config.hop")
 local persistence = require("plugin-config.persistence")
+local notify = require("plugin-config.notify")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -133,4 +134,6 @@ require("lazy").setup({
   hop,
   -- 会话管理
   persistence,
+  -- 通知
+  notify
 })
