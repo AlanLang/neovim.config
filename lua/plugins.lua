@@ -106,15 +106,24 @@ require("lazy").setup({
   leap,
   -- 快速在当前行进行查找
   flit,
+  -- 代码上下文
   treesitter_context,
+  -- 退出模式
   better_escape,
+  -- 可视化标签
   marks,
+  -- 快速操作包围符号
   surround,
+  -- 移动选中的文本
   gomove,
+  -- 方便填写查找替换的表达式
   search_replace,
+  -- 快速操作对象
   textobjects,
   -- 查找替换
   nvim_spectre,
+  -- 方便运行测试
   jester,
+  -- 全局查找替换
   spectre,
 })
