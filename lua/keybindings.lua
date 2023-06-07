@@ -35,6 +35,10 @@ map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 map("n", "<leader>i", ":LazyGit<CR>", opt)
 
+
+map("n", "<leader>f", "viw<cmd>lua require('spectre').open_file_search()<CR>", opt)
+map("n", "<leader>F", "<cmd>lua require('spectre').open()<cr>", opt)
+
 -- 打开控制台
 map("n", "<leader>t", ":ToggleTerm<CR>", opt)
 -- 关闭控制台

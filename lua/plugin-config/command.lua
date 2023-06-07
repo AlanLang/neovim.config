@@ -27,7 +27,7 @@ local command_center_config = function()
     },
     {
       desc = "search string",
-      cmd = ":Telescope live_grep<CR>"
+      cmd = "<cmd>lua require('spectre').open()<cr>"
     },
     {
       desc = "command history",

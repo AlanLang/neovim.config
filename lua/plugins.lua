@@ -30,6 +30,7 @@ local search_replace = require("plugin-config.search-replace")
 local textobjects = require("plugin-config.textobjects")
 local nvim_spectre = require("plugin-config.nvim-spectre")
 local jester = require("plugin-config.jester")
+local spectre = require("plugin-config.spectre")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -114,5 +115,6 @@ require("lazy").setup({
   textobjects,
   -- 查找替换
   nvim_spectre,
-  jester
+  jester,
+  spectre,
 })
