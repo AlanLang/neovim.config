@@ -15,9 +15,6 @@ map("n", "<leader>s", ":w<CR>", opt)
 map("n", "<leader>d", ":vsp<CR>", opt)
 map("n", "<leader>x", ":sp<CR>", opt)
 
-map("n", "d", '"_d', opt)
-map("n", "c", '"_c', opt)
-
 -- 关闭当前
 map("n", "<leader>w", "<C-w>c", opt)
 map("n", "<leader>q", "<C-w>o", opt)
@@ -28,6 +25,7 @@ map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
 
+map("n", "<leader>m", "`", opt)
 -- Telescope
 -- 查找文件
 map("n", "<leader>g", ":Telescope find_files<CR>", opt)
