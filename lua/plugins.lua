@@ -117,8 +117,8 @@ require("lazy").setup({
   better_escape,
   -- 可视化标签
   marks,
-  -- 快速操作包围符号
-  surround,
+  -- 快速操作包围符号(快捷键冲突，所以先禁用)
+  -- surround,
   -- 移动选中的文本
   gomove,
   -- 方便填写查找替换的表达式
