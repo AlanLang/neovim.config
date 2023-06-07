@@ -80,7 +80,11 @@ require("lazy").setup({
   -- 同缩进快速操作
   "michaeljsmith/vim-indent-object",
   -- git 信息
-  "f-person/git-blame.nvim",
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy",
+    lazy = true,
+  },
   -- 注释
   comment,
   -- 代码补全

@@ -76,5 +76,6 @@ return {
   "FeiyouG/command_center.nvim",
   dependencies = { "nvim-telescope/telescope.nvim" },
   config = command_center_config,
+  lazy = true,
   cmd = "Telescope command_center",
 }

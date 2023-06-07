@@ -1,5 +1,7 @@
 return {
   "chentoast/marks.nvim",
+  lazy = true,
+  keys = { "m", "dm", "`" },
   config = function()
     require("marks").setup({
       default_mappings = true,

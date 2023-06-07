@@ -1,22 +1,22 @@
 local smooth_cursor_config = {
   autostart = true,
-  cursor = "",              -- cursor shape (need nerd font)
-  texthl = "SmoothCursor",   -- highlight group, default is { bg = nil, fg = "#FFD400" }
-  linehl = nil,              -- highlight sub-cursor line like 'cursorline', "CursorLine" recommended
-  type = "default",          -- define cursor movement calculate function, "default" or "exp" (exponential).
+  cursor = "",          -- cursor shape (need nerd font)
+  texthl = "SmoothCursor", -- highlight group, default is { bg = nil, fg = "#FFD400" }
+  linehl = nil,            -- highlight sub-cursor line like 'cursorline', "CursorLine" recommended
+  type = "default",        -- define cursor movement calculate function, "default" or "exp" (exponential).
   fancy = {
-      enable = false,        -- enable fancy mode
-      head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
-      body = {
-          { cursor = "", texthl = "SmoothCursorRed" },
-          { cursor = "", texthl = "SmoothCursorOrange" },
-          { cursor = "●", texthl = "SmoothCursorYellow" },
-          { cursor = "●", texthl = "SmoothCursorGreen" },
-          { cursor = "•", texthl = "SmoothCursorAqua" },
-          { cursor = ".", texthl = "SmoothCursorBlue" },
-          { cursor = ".", texthl = "SmoothCursorPurple" },
-      },
-      tail = { cursor = nil, texthl = "SmoothCursor" }
+    enable = false,        -- enable fancy mode
+    head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
+    body = {
+      { cursor = "", texthl = "SmoothCursorRed" },
+      { cursor = "", texthl = "SmoothCursorOrange" },
+      { cursor = "●", texthl = "SmoothCursorYellow" },
+      { cursor = "●", texthl = "SmoothCursorGreen" },
+      { cursor = "•", texthl = "SmoothCursorAqua" },
+      { cursor = ".",   texthl = "SmoothCursorBlue" },
+      { cursor = ".",   texthl = "SmoothCursorPurple" },
+    },
+    tail = { cursor = nil, texthl = "SmoothCursor" }
   },
   flyin_effect = nil,        -- "bottom" or "top"
   speed = 25,                -- max is 100 to stick to your current position
@@ -29,11 +29,13 @@ local smooth_cursor_config = {
   disabled_filetypes = nil,  -- this option will be skipped if enabled_filetypes is set. example: { "TelescopePrompt", "NvimTree" }
 }
 
-local smooth_cursor_config =  function()
+local smooth_cursor_config = function()
   require('smoothcursor').setup(smooth_cursor_config)
 end
 
 return {
-		"gen740/SmoothCursor.nvim",
-		config = smooth_cursor_config,
-	}
+  "gen740/SmoothCursor.nvim",
+  lazy = true,
+  event = "VeryLazy",
+  config = smooth_cursor_config,
+}
