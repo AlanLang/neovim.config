@@ -26,6 +26,11 @@ npm install -g cspell
 brew install lazygit
 ```
 
+## install gnu-sed
+```
+brew install gnu-sed
+```
+
 ## 主题
 https://github.com/mhartington/oceanic-next
 
