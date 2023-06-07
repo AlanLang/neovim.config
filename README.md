@@ -66,9 +66,27 @@ https://github.com/xiyaowong/nvim-transparent
 | `b` | 后移一个单词，光标停在上一个单词开头 | 
 | `B` | 移动到上一个单词开头，忽略一些标点 |
 
+快速跳转
+| 快捷键 | 说明             |
+| ------ | ---------------- |
+| `s{chart}{chart}`  | 通过两个单词向后查找     |
+| `S{chart}{chart}`  | 通过两个单词向前查找     |
+| `f{chart}{chart}`  | 通过一个单词向后查找     |
+| `F{chart}{chart}`  | 通过一个单词向前查找     |
+| `R{chart}`  | 通过一个单词屏幕查找     |
+
+### 窗口管理
+| 快捷键 | 说明             |
+| ------ | ---------------- |
+| `<leader>d`  | 横向分割窗口     |
+| `<leader>x`  | 纵向分割窗口     |
+| `<leader>h`  | 跳转到左窗口     |
+| `<leader>j`  | 跳转到下窗口     |
+| `<leader>k`  | 跳转到上窗口     |
+| `<leader>l`  | 跳转到右窗口     |
+
 ### 对象操作
 以选中模式`v`举例，范围以`a`举例
-
 #### nvim-treesitter-textobjects
 
 | 快捷键 | 说明             |
@@ -100,4 +118,8 @@ https://github.com/xiyaowong/nvim-transparent
 | `gd`   | 跳转到定义的地方 |
 | `gr`   | 列出所有引用     |
 | `K`    | 显示悬浮效果     |
+| `gp`    | 悬浮显示提示    |
+| `gk`    | 显示上一个提示     |
+| `gj`    | 显示下一个提示     |
 | `<leader>rn` | 重命名     |
+| `<leader>ca` | 显示操作     |
