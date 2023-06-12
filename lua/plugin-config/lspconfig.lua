@@ -20,4 +20,6 @@ end
 return   {
   "neovim/nvim-lspconfig",
   config = nvim_lsp_config,
+  event = "VeryLazy",
+  lazy = true,
 }

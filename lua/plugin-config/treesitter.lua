@@ -29,4 +29,6 @@ end
 return {
   "nvim-treesitter/nvim-treesitter",
   config = treesitter_config,
+  lazy = true,
+  event = "VeryLazy",
 }
