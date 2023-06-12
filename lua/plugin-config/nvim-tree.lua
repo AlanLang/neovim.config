@@ -13,7 +13,7 @@ local config = {
 	},
 	-- 隐藏 .文件 和 node_modules 文件夹
 	filters = {
-		custom = { "node_modules", ".git"},
+		custom = { "node_modules", ".git" },
 	},
 	view = {
 		-- 宽度
