@@ -1,6 +1,8 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
+  lazy = true,
+  event = { "InsertEnter" },
   config = function()
     local null_ls = require("null-ls")
     local formatting = null_ls.builtins.formatting
@@ -19,10 +21,6 @@ return {
         formatting.prettier.with({
           -- 只比默认配置少了 markdown
           filetypes = {
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
             "css",
             "less",
             "html",
