@@ -15,6 +15,7 @@ local mason_lsp_config = function()
       "taplo",
       "yamlls",
       "lua_ls",
+      "eslint"
     },
   })
 end

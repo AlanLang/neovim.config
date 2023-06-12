@@ -9,7 +9,7 @@ local mason_lspconfig = require("plugin-config.mason-lspconfig")
 local lspconfig = require("plugin-config.lspconfig")
 local cmp = require("plugin-config.cmp")
 local lspkind = require("plugin-config.lspkind")
-local null_ls = require("plugin-config.null")
+-- local null_ls = require("plugin-config.null")
 local dashboard = require("plugin-config.dashboard")
 local project = require("plugin-config.project")
 local neoscroll = require("plugin-config.neoscroll")
@@ -98,7 +98,7 @@ require("lazy").setup({
   -- 代码提示
   lspkind,
   -- 代码格式化
-  null_ls,
+  -- null_ls,
   -- 代码时间统计
   "wakatime/vim-wakatime",
   -- git 管理

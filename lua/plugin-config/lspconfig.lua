@@ -4,6 +4,7 @@ local nvim_lsp_config =  function()
   local servers = {
     lua_ls = require("lsp.config.lua"),
     tsserver = require("lsp.config.ts"),
+    eslint = require("lsp.config.eslint"),
   }
   for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then
