@@ -33,6 +33,7 @@ local spectre = require("plugin-config.spectre")
 local hop = require("plugin-config.hop")
 local persistence = require("plugin-config.persistence")
 local notify = require("plugin-config.notify")
+local neoai = require("plugin-config.neoai")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -135,5 +136,6 @@ require("lazy").setup({
   -- 会话管理
   persistence,
   -- 通知
-  notify
+  notify,
+  neoai
 })

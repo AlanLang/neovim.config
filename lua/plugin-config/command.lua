@@ -68,6 +68,10 @@ local command_center_config = function()
     {
       desc = "Search replace multiple buffer open",
       cmd = ":SearchReplaceMultiBufferOpen<CR>"
+    },
+    {
+      desc = "ask ai",
+      cmd = ":NeoAI<CR>"
     }
   })
 end
