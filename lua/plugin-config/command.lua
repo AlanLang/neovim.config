@@ -72,6 +72,14 @@ local command_center_config = function()
     {
       desc = "ask ai",
       cmd = ":NeoAI<CR>"
+    },
+    {
+      desc = "diff view open",
+      cmd = ":DiffviewOpen<CR>"
+    },
+    {
+      desc = "diff view close",
+      cmd = ":DiffviewClose<CR>"
     }
   })
 end

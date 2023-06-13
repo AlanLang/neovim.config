@@ -1,5 +1,7 @@
 return {
   "ahmedkhalf/project.nvim",
+  lazy = true,
+  event = "VeryLazy",
   config = function()
     require("project_nvim").setup({
       -- your configuration comes here

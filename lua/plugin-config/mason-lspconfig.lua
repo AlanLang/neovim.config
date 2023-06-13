@@ -23,4 +23,6 @@ end
 return {
   "williamboman/mason-lspconfig.nvim",
   config = mason_lsp_config,
+  lazy = true,
+  event = "VeryLazy"
 }

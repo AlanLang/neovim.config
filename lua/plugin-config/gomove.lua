@@ -1,5 +1,7 @@
 return {
   "booperlv/nvim-gomove",
+  layz = true,
+  keys = { "<left>", "<down>", "<up>", "<right>", "<C-h>", "<C-j>", "<C-k>", "<C-l>" },
   config = function()
     require("gomove").setup({
       map_defaults = false,
