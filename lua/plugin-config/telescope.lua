@@ -1,6 +1,4 @@
 -- 列表操作快捷键
-local list_keys = require('keybindings').mapTelescope
-
 local telescope_config = function()
   local telescope = require("telescope")
   telescope.setup {
@@ -8,7 +6,9 @@ local telescope_config = function()
       -- Default configuration for telescope goes here:
       -- config_key = value,
       mappings = {
-        i = list_keys
+        i = {
+          ["<Tab>"] = "file_vsplit",
+        }
       }
     },
     pickers = {
