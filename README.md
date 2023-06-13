@@ -4,6 +4,8 @@
 ## 字体
 
 https://github.com/Karmenzind/monaco-nerd-fonts/blob/master/fonts/Monaco%20Nerd%20Font%20Complete%20Windows%20Compatible.otf
+其他字体推荐：
+https://github.com/subframe7536/maple-font
 
 ## 替代 vi 和 vim
 
