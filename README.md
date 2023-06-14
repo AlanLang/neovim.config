@@ -98,6 +98,9 @@ https://github.com/xiyaowong/nvim-transparent
 | `vas`  | 选中当前`scope`  |
 | `vad`  | 选中当前条件     |
 | `vaa`  | 选中当前参数     |
+| `vai`  | 选中同层级       |
+| `cs'"` | 替换包围的单引号为双引号  |
+| `dsf` | 删除外围的函数  |
 
 ### 跳转
 
