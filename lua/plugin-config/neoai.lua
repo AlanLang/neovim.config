@@ -1,7 +1,6 @@
 return {
   "Bryley/neoai.nvim",
   lazy = true,
-  cmd = "NeoAI",
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
