@@ -31,7 +31,7 @@ map("n", "<leader>m", "`", opt)
 map("n", "<leader>g", ":Telescope find_files<CR>", opt)
 map("n", "<leader>G", ":Telescope find_files hidden=true<CR>", opt)
 -- 打开命令栏
-map("n", "<leader>c", ":Telescope command_center<CR>", opt)
+map("n", "<leader>p", ":Telescope command_center<CR>", opt)
 map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 map("n", "<leader>u", ":Telescope oldfiles<CR>", opt)
