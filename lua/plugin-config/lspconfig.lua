@@ -1,10 +1,13 @@
-local nvim_lsp_config =  function()
+local nvim_lsp_config = function()
   require("lsp.ui")
   local lspconfig = require("lspconfig")
   local servers = {
     lua_ls = require("lsp.config.lua"),
     tsserver = require("lsp.config.ts"),
     eslint = require("lsp.config.eslint"),
+    cssls = require("lsp.config.css"),
+    emmet_ls = require("lsp.config.emmet_ls"),
+    tailwindcss = require("lsp.config.tailwindcss"),
   }
   for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then
@@ -17,7 +20,7 @@ local nvim_lsp_config =  function()
   end
 end
 
-return   {
+return {
   "neovim/nvim-lspconfig",
   config = nvim_lsp_config,
   event = "VeryLazy",
