@@ -1,6 +1,8 @@
 -- 自定义图标
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.ERROR }
+  },
   signs = true,
   update_in_insert = false,
   underline = true,
