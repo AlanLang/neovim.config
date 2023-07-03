@@ -37,6 +37,7 @@ map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 map("n", "<leader>u", ":Telescope oldfiles<CR>", opt)
 map("n", "<leader>i", ":LazyGit<CR>", opt)
 
+map("n", "<leader>v", ":TroubleToggle<CR>", opt)
 
 map("n", "<leader>f", "viw<cmd>lua require('spectre').open_file_search()<CR>", opt)
 map("n", "<leader>F", "<cmd>lua require('spectre').open()<cr>", opt)
