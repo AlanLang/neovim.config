@@ -9,6 +9,7 @@ local nvim_lsp_config = function()
     emmet_ls = require("lsp.config.emmet_ls"),
     tailwindcss = require("lsp.config.tailwindcss"),
     marksman = require("lsp.config.marksman"),
+    html = require("lsp.config.html"),
   }
   for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then
