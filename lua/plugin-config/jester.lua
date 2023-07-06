@@ -1,6 +1,6 @@
 return {
   "David-Kunz/jester",
-  event = "VeryLazy",
+  cmd = "Telescope command_center",
   lazy = true,
   config = function()
     require("jester").setup({

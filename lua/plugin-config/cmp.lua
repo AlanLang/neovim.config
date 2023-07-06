@@ -42,8 +42,8 @@ local cmp_config = function()
 
     -- 快捷键设置
     mapping = require("keybindings").cmp(cmp),
-        -- 使用lspkind-nvim显示类型图标
-        formatting = format
+    -- 使用lspkind-nvim显示类型图标
+    formatting = format
   })
 
   -- / 查找模式使用 buffer 源
@@ -84,6 +84,8 @@ return {
   {
     "hrsh7th/nvim-cmp",
     config = cmp_config,
+    event = "InsertEnter",
+    lazy = true,
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-nvim-lsp",
