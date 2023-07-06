@@ -1,5 +1,6 @@
 local cmp_config = function()
   local cmp = require("cmp")
+  local luasnip = require("luasnip")
   local format = {
     format = require("lspkind").cmp_format({
       mode = 'symbol',
@@ -15,36 +16,34 @@ local cmp_config = function()
       end
     })
   }
-
   cmp.setup({
+    completion = {
+      -- 自动选中第一条
+      completeopt = "menu,menuone,noinsert",
+    },
     -- 指定 snippet 引擎
     snippet = {
-      expand = function(args)
-        -- For `vsnip` users.
-        vim.fn["vsnip#anonymous"](args.body)
-
-        -- For `luasnip` users.
-        -- require('luasnip').lsp_expand(args.body)
-
-        -- For `ultisnips` users.
-        -- vim.fn["UltiSnips#Anon"](args.body)
-
-        -- For `snippy` users.
-        -- require'snippy'.expand_snippet(args.body)
-      end,
+      expand = function(args) luasnip.lsp_expand(args.body) end,
+    },
+    duplicates = {
+      nvim_lsp = 1,
+      luasnip = 1,
+      cmp_tabnine = 1,
+      buffer = 1,
+      path = 1,
     },
     -- 补全源
-    sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        -- For vsnip users.
-        { name = "vsnip" },
-      },
-      { { name = "buffer" }, { name = "path" } }),
+    sources = cmp.config.sources {
+      { name = "nvim_lsp", priority = 1000 },
+      { name = "luasnip",  priority = 750 },
+      { name = "buffer",   priority = 500 },
+      { name = "path",     priority = 250 },
+    },
 
     -- 快捷键设置
     mapping = require("keybindings").cmp(cmp),
-    -- 使用lspkind-nvim显示类型图标
-    formatting = format
+        -- 使用lspkind-nvim显示类型图标
+        formatting = format
   })
 
   -- / 查找模式使用 buffer 源
@@ -66,18 +65,31 @@ local cmp_config = function()
   })
 end
 
+local luasnip_config = function(_, opts)
+  if opts then require("luasnip").config.setup(opts) end
+  vim.tbl_map(function(type) require("luasnip.loaders.from_" .. type).lazy_load() end, { "vscode", "snipmate", "lua" })
+end
+
+
 return {
-  "hrsh7th/nvim-cmp",
-  lazy = true,
-  event = { "InsertEnter" },
-  config = cmp_config,
-  dependencies = {
-    "hrsh7th/vim-vsnip",
-    "hrsh7th/cmp-vsnip",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "rafamadriz/friendly-snippets",
+  {
+    "L3MON4D3/LuaSnip",
+    build = vim.fn.has "win32" == 0
+        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build\n'; make install_jsregexp"
+        or nil,
+    dependencies = { "rafamadriz/friendly-snippets" },
+    opts = { store_selection_keys = "<C-x>" },
+    config = luasnip_config,
   },
+  {
+    "hrsh7th/nvim-cmp",
+    config = cmp_config,
+    dependencies = {
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+    },
+  }
 }
