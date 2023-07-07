@@ -22,7 +22,7 @@ alias v='nvim'
 npm install -g cspell
 ```
 
-## lazgit
+## lazygit
 
 ```
 brew install lazygit
