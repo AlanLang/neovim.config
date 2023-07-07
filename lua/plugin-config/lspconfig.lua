@@ -10,6 +10,7 @@ local nvim_lsp_config = function()
     tailwindcss = require("lsp.config.tailwindcss"),
     marksman = require("lsp.config.marksman"),
     html = require("lsp.config.html"),
+    rust_analyzer = require("lsp.config.rust"),
   }
   for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then
