@@ -34,7 +34,7 @@ map("n", "<leader>G", ":Telescope find_files hidden=true<CR>", opt)
 map("n", "<leader>p", ":Telescope command_center<CR>", opt)
 map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>b", ":Telescope buffers<CR>", opt)
-map("n", "<leader>u", ":Telescope oldfiles<CR>", opt)
+map("n", "<leader>u", ":Telescope buffers<CR>", opt)
 map("n", "<leader>i", ":LazyGit<CR>", opt)
 
 map("n", "<leader>v", ":TroubleToggle<CR>", opt)
