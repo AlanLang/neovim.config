@@ -10,14 +10,13 @@ vim.g.maplocalleader = " "
 
 map("n", "<leader>a", "<C-o>", opt)
 map("n", "<leader>z", "<C-i>", opt)
-map("n", "<leader>s", ":w<CR>", opt)
+map("n", "<leader>w", ":w<CR>", opt)
 -- windows 分屏快捷键
 map("n", "<leader>d", ":vsp<CR>", opt)
 map("n", "<leader>x", ":sp<CR>", opt)
 
 -- 关闭当前
-map("n", "<leader>w", "<C-w>c", opt)
-map("n", "<leader>q", "<C-w>o", opt)
+map("n", "<leader>q", ":q<CR>", opt)
 -- Alt + hjkl  窗口之间跳转
 map("n", "<leader>h", "<C-w>h", opt)
 map("n", "<leader>j", "<C-w>j", opt)
