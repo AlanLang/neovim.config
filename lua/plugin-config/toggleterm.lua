@@ -1,5 +1,6 @@
+-- 终端
 return {
-  'akinsho/toggleterm.nvim',
+  "akinsho/toggleterm.nvim",
   lazy = true,
   cmd = "ToggleTerm",
   config = function()

@@ -1,3 +1,4 @@
+-- 背景透明
 return {
   "xiyaowong/nvim-transparent",
   config = function()
