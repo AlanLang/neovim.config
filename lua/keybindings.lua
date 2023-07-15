@@ -23,6 +23,22 @@ map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
+-- 标签页快捷键
+map("n", "<leader>bb", ":BufferLinePick<CR>", opt)
+map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+map("n", "<leader>bo", ":BufferLineCloseOthers<CR>", opt)
+map("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opt)
+map("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opt)
+map("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opt)
+map("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opt)
+map("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opt)
+map("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opt)
+map("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opt)
+map("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opt)
+map("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", opt)
+
 
 map("n", "<leader>m", "`", opt)
 -- Telescope
@@ -32,7 +48,6 @@ map("n", "<leader>G", ":Telescope find_files hidden=true<CR>", opt)
 -- 打开命令栏
 map("n", "<leader>p", ":Telescope command_center<CR>", opt)
 map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
-map("n", "<leader>b", ":Telescope buffers<CR>", opt)
 map("n", "<leader>u", ":Telescope buffers<CR>", opt)
 map("n", "<leader>i", ":LazyGit<CR>", opt)
 
