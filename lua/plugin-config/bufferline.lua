@@ -56,7 +56,7 @@ return {
           bg = 'none',
         },
         buffer_visible = {
-          fg = 'none',
+          fg = '#65737e',
           bg = 'none',
         },
         buffer_selected = {
