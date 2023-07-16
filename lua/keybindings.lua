@@ -8,20 +8,47 @@ local opt = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-map("n", "<leader>a", "<C-o>", opt)
-map("n", "<leader>z", "<C-i>", opt)
-map("n", "<leader>w", ":w<CR>", opt)
--- windows 分屏快捷键
-map("n", "<leader>d", ":vsp<CR>", opt)
-map("n", "<leader>x", ":sp<CR>", opt)
-
--- 关闭当前
+-- 退出
 map("n", "<leader>q", ":q<CR>", opt)
+-- 保存
+map("n", "<leader>w", ":w<CR>", opt)
+-- 文件树
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
+-- leader - r
+-- 打开控制台
+map("n", "<leader>t", ":ToggleTerm<CR>", opt)
+-- 打开上次的会话
+map("n", "<leader>y", "<cmd>lua require('persistence').load()<cr>", opt)
+-- buffer 列表
+map("n", "<leader>u", ":Telescope buffers<CR>", opt)
+-- lazygit
+map("n", "<leader>i", ":LazyGit<CR>", opt)
+--- 代码 symbols
+map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
+--- 命令中心
+map("n", "<leader>p", ":Telescope command_center<CR>", opt)
+--- 回退
+map("n", "<leader>a", "<C-o>", opt)
+--- leader s
+--- 横向分屏
+map("n", "<leader>d", ":vsp<CR>", opt)
+--- 查找
+map("n", "<leader>f", "viw<cmd>lua require('spectre').open_file_search()<CR>", opt)
+map("n", "<leader>F", "<cmd>lua require('spectre').open()<cr>", opt)
+-- 查找文件
+map("n", "<leader>g", ":Telescope find_files<CR>", opt)
+map("n", "<leader>G", ":Telescope find_files hidden=true<CR>", opt)
 -- Alt + hjkl  窗口之间跳转
 map("n", "<leader>h", "<C-w>h", opt)
 map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
+--- 前进
+map("n", "<leader>z", "<C-i>", opt)
+--- 纵向分屏
+map("n", "<leader>x", ":sp<CR>", opt)
+--- 切换错误列表
+map("n", "<leader>v", ":TroubleToggle<CR>", opt)
 
 -- 标签页快捷键
 map("n", "<leader>bb", ":BufferLinePick<CR>", opt)
@@ -29,6 +56,8 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bo", ":BufferLineCloseOthers<CR>", opt)
+map("n", "<leader>bj", ":BufferLineCycleNext<CR>", opt)
+map("n", "<leader>bk", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opt)
 map("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opt)
 map("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opt)
@@ -38,43 +67,22 @@ map("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opt)
 map("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opt)
 map("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opt)
 map("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", opt)
+--- leader - n
+--- 最大化当前窗口
 
-
+--- 标记
 map("n", "<leader>m", "`", opt)
--- Telescope
--- 查找文件
-map("n", "<leader>g", ":Telescope find_files<CR>", opt)
-map("n", "<leader>G", ":Telescope find_files hidden=true<CR>", opt)
--- 打开命令栏
-map("n", "<leader>p", ":Telescope command_center<CR>", opt)
-map("n", "<leader>o", ":Telescope lsp_document_symbols<CR>", opt)
-map("n", "<leader>u", ":Telescope buffers<CR>", opt)
-map("n", "<leader>i", ":LazyGit<CR>", opt)
 
-map("n", "<leader>v", ":TroubleToggle<CR>", opt)
 
-map("n", "<leader>f", "viw<cmd>lua require('spectre').open_file_search()<CR>", opt)
-map("n", "<leader>F", "<cmd>lua require('spectre').open()<cr>", opt)
-map("n", "<leader>y", "<cmd>lua require('persistence').load()<cr>", opt)
-
--- 打开控制台
-map("n", "<leader>t", ":ToggleTerm<CR>", opt)
 -- 关闭控制台
 -- map("t", "<esc>", [[<C-\><C-n><C-w>c]], opt)
 map("t", "<tab>", [[<C-\><C-n><C-w>c]], opt)
-
--- 打开当前符号搜索
--- map("n", "<leader>d", ":Telescope lsp_document_symbols<CR>", opt)
-
--- nvim-tree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
   -- 打开文件或文件
   { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
   -- 分屏打开文件
-  { key = "v",                              action = "vsplit" },
-  { key = "h",                              action = "split" },
+  { key = "h",                              action = "vsplit" },
   -- 显示隐藏文件
   { key = "i",                              action = "toggle_custom" },   -- 对应 filters 中的 custom (node_modules)
   { key = ".",                              action = "toggle_dotfiles" }, -- Hide (dotfiles)
