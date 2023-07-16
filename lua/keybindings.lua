@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- 退出
-map("n", "<leader>q", ":q<CR>", opt)
+map("n", "<leader>q", "<C-w>c", opt)
 -- 保存
 map("n", "<leader>w", ":w<CR>", opt)
 -- 文件树
