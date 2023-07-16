@@ -199,6 +199,15 @@ return {
           bg = 'none',
           sp = 'none',
         },
+        modified = {
+          bg = 'none',
+        },
+        modified_visible = {
+          bg = 'none',
+        },
+        modified_selected = {
+          bg = 'none',
+        },
         duplicate_selected = {
           fg = 'none',
           bg = 'none',
